@@ -10,8 +10,8 @@ import SwiftUI
 @main
 struct AppMueblesVentaApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup{
+            SplashView()
         }
     }
 }

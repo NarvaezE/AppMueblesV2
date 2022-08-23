@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "XS_slice_07.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
