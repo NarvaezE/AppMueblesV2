@@ -225,8 +225,8 @@
 				77B8E09328A17A6300AF5E7C /* MyAddressView.swift */,
 				77B8E09528A17A7100AF5E7C /* MyAccountView.swift */,
 				77B8E09728A17A7E00AF5E7C /* SettingsView.swift */,
-				77B8E09928A17A9500AF5E7C /* LiveShowroomView.swift */,
 				77DB4E8A28A2EC2900F3A1AC /* toolbar.swift */,
+				77B8E09928A17A9500AF5E7C /* LiveShowroomView.swift */,
 				77DB4E8C28A30A2D00F3A1AC /* CheckoutView.swift */,
 				77E4DB6428B4295C000F9CFA /* HomeProductDetailView.swift */,
 			);

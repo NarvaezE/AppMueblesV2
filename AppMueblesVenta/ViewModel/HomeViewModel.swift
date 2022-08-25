@@ -13,14 +13,14 @@ class HomeViewModel: ObservableObject{
     //Productos de ejemplo
     @Published var products:[Productos] = [
 
-        Productos(type: .Chairs, title: "Saloon Chair", price: "$140", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
-        Productos(type: .Sofa, title: "Garden Sofa", price: "$140", color: "brown", quantity: 1, rate: "4", productImg: "gard_chair"),
+        Productos(type: .Chairs, title: "Saloon Chair", price: "$120", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
+        Productos(type: .Sofa, title: "Garden Sofa", price: "$160", color: "brown", quantity: 1, rate: "4", productImg: "gard_chair"),
         Productos(type: .Chairs, title: "Saloon Chair", price: "$140", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
         Productos(type: .TrendingNow, title: "Saloon Chair", price: "$140", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
         Productos(type: .TrendingNow, title: "Saloon Chair", price: "$140", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
-        Productos(type: .Sofa, title: "Saloon Chair", price: "$140", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
-        Productos(type: .Table, title: "Saloon Chair", price: "$140", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
-        Productos(type: .Table, title: "Saloon Chair", price: "$140", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
+        Productos(type: .Sofa, title: "Saloon Chair", price: "$120", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
+        Productos(type: .Table, title: "Saloon Chair", price: "$120", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
+        Productos(type: .Table, title: "Saloon Chair", price: "$120", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
         Productos(type: .TrendingNow, title: "Saloon Chair", price: "$140", color: "red", quantity: 1, rate: "4", productImg: "sillon"),
         Productos(type: .Chairs, title: "Saloon Chair", price: "$140", color: "red", quantity: 1, rate: "4", productImg: "arm_chair"),
         Productos(type: .Sofa, title: "Arm Chair", price: "$140", color: "red", quantity: 1, rate: "4", productImg: "sillon"),

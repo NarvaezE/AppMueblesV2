@@ -12,12 +12,13 @@ struct HomeProductDetailView: View {
     var product: Productos
     //let colors: [Color] = [.blue,.brown,.orange,.red,.black]
     @EnvironmentObject var sharedHomeData: SharedHomeDataModel
-    
+    @EnvironmentObject var homeData: HomeViewModel
     var animation: Namespace.ID
 //    init(){
 //        UIPageControl.appearance().currentPageIndicatorTintColor = .orange
 //            UIPageControl.appearance().pageIndicatorTintColor = .gray
 //    }
+    
     var body: some View {
         
         ZStack {
@@ -74,7 +75,11 @@ struct HomeProductDetailView: View {
                     HStack {
                         Text("GAMMALBYN").font(.system(size: 20)).fontWeight(.semibold)
                         Spacer()
-                        Image(systemName: "heart.fill").foregroundColor(.red).frame(width: 30, height: 30).cornerRadius(100).background(Color("gris"))
+                        Button {
+                            addToLiked()
+                        }label:{
+                            Image(systemName: "heart.fill").foregroundColor(isLiked() ? .red: Color.black.opacity(0.75)).frame(width: 30, height: 30).cornerRadius(100).background(Color("gris"))
+                        }
                     }.padding(.horizontal)
                     Text(product.title+","+product.color).foregroundColor(.gray).padding(.horizontal)
                     Text(product.price).font(.system(size: 22)).fontWeight(.bold).foregroundColor(Color("main_color")).padding(.horizontal).padding(.top,5)
@@ -89,15 +94,7 @@ struct HomeProductDetailView: View {
                         Text("(24 Review)").font(.system(size: 15))
                         
                     }.font(.system(size: 10)).padding(.horizontal)
-//                    HStack{
-//                        ForEach(colors, id:\.self){ color in
-//                            Circle()
-//                                .foregroundColor(color)
-//                                .frame(width: 20, height: 20)
-//
-//
-//                        }
-//                    }.padding(.horizontal).frame(width: .infinity, height: 30).background(Color("gris")).cornerRadius(100)
+
                 }
                 VStack {
                     HStack{
@@ -116,9 +113,9 @@ struct HomeProductDetailView: View {
                 Spacer()
                 HStack{
                     Button{
-                        
+                        addToCart()
                     }label: {
-                            Text("Add to cart").font(.system(size: 15))
+                        Text("\(isAddedToCart() ? "Added ": "Add ")to cart").font(.system(size: 15))
                                 .fontWeight(.semibold).frame(width: .infinity, height: 45).padding(.horizontal,30)
                                 .foregroundColor(Color("main_color"))
                                 .overlay(
@@ -167,6 +164,35 @@ struct HomeProductDetailView: View {
                 }
             })
             
+        }
+    }
+    func isLiked()->Bool{
+        return sharedData.likedProducts.contains { product in
+            return self.product.id == product.id
+        }
+    }
+    func isAddedToCart()->Bool{
+        return sharedData.cartProducts.contains { product in
+            return self.product.id == product.id
+        }
+    }
+    func addToLiked(){
+        if let index = sharedData.likedProducts.firstIndex(where: {product in
+            return self.product.id == product.id
+        }){
+            sharedData.likedProducts.remove(at: index)
+        }else{
+            sharedData.likedProducts.append(product)
+        }
+    }
+    func addToCart(){
+        if let index = sharedData.cartProducts.firstIndex(where: {product in
+            return self.product.id == product.id
+        })
+        {
+            sharedData.cartProducts.remove(at: index)
+        }else{
+            sharedData.cartProducts.append(product)
         }
     }
 }
