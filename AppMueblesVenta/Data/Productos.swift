@@ -13,7 +13,7 @@ struct Productos:Identifiable,Hashable{
     var title:String
     var price:String
     var color:String
-    var quantity:Int=1
+    var quantity:Int
     var rate:String
     var productImg:String = ""
 }

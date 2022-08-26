@@ -81,21 +81,56 @@ struct HomeProductDetailView: View {
                             Image(systemName: "heart.fill").foregroundColor(isLiked() ? .red: Color.black.opacity(0.75)).frame(width: 30, height: 30).cornerRadius(100).background(Color("gris"))
                         }
                     }.padding(.horizontal)
-                    Text(product.title+","+product.color).foregroundColor(.gray).padding(.horizontal)
-                    Text(product.price).font(.system(size: 22)).fontWeight(.bold).foregroundColor(Color("main_color")).padding(.horizontal).padding(.top,5)
-                    Text("Color").padding(.horizontal).font(.system(size: 18))
-                    HStack(spacing:-1){
-                        Spacer()
-                        Image(systemName: "star.fill")
-                        Image(systemName: "star.fill")
-                        Image(systemName: "star.fill")
-                        Image(systemName: "star.fill")
-                        Image(systemName: "star.fill").foregroundColor(.gray)
-                        Text("(24 Review)").font(.system(size: 15))
+                    VStack(alignment: .leading, spacing: 8){
+                        HStack (spacing:8){
+                            Text(product.title+","+product.color).foregroundColor(.gray).padding(.horizontal)
+                                .padding(.top, 1)
+                            HStack(alignment: .lastTextBaseline, spacing:-1){
+                                Spacer()
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill")
+                                Image(systemName: "star.fill").foregroundColor(.gray)
+                                Text("(24 Review)").font(.system(size: 15))
+                                
+                            }.font(.system(size: 10)).padding(.horizontal).padding(.top,8)
+                        }
+                        Text(product.price).font(.system(size: 22)).fontWeight(.bold).foregroundColor(Color("main_color")).padding(.horizontal).padding(.top,5)
+                        HStack{
+                            Text("Color").padding(.horizontal).font(.system(size: 18))
+                            Spacer()
+                            HStack{
+                                Spacer()
+                                Text("\(product.quantity)")
+                                Spacer()
+                                VStack(spacing:4){
+                                    Button{
+                                        //product.quantity += 1
+                                    }label:{
+                                        Image(systemName: "arrowtriangle.up.fill").font(.subheadline).foregroundColor(Color("main_color"))
+                                    }
+                                    
+                                    Button{
+                                        //product.quantity = (product.quantity > 0 ? (product.quantity -1):0)
+                                    }label:{
+                                        Image(systemName: "arrowtriangle.down.fill").font(.subheadline).foregroundColor(Color("main_color"))
+                                    }
+                                }.padding(8)
+                            }.frame(width: 80, height: 33, alignment: .trailing).background(
+                                Color("gris")
+                            ).overlay{
+                                RoundedRectangle(cornerRadius:  5)
+                                    .stroke(Color("main_color"))
+                                
+                            }.padding(.horizontal)
+                            
+                        }
+                            
                         
-                    }.font(.system(size: 10)).padding(.horizontal)
+                    }
 
-                }
+                }.padding(.top)
                 VStack {
                     HStack{
                         Text("Materials")
@@ -137,32 +172,7 @@ struct HomeProductDetailView: View {
                     }
                     
                 }
-            }.navigationBarTitle("Products").navigationBarTitleDisplayMode(.inline).toolbar(content: {
-                ToolbarItem(placement: .navigationBarLeading){
-                    Button {
-                        
-                    }label:{
-                        Label("salir",systemImage: "line.2.horizontal.decrease.circle")
-                            .labelStyle(.iconOnly)
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing){
-                    Button {
-                        
-                    }label:{
-                        Label("salir",systemImage: "viewfinder")
-                            .labelStyle(.iconOnly)
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing){
-                    Button {
-                        
-                    }label:{
-                        Label("salir",systemImage: "bag")
-                            .labelStyle(.iconOnly)
-                    }
-                }
-            })
+            }
             
         }
     }
