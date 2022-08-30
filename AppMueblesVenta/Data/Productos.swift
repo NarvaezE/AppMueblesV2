@@ -15,7 +15,7 @@ struct Productos:Identifiable,Hashable{
     var color:String
     var quantity:Int
     var rate:String
-    var productImg:String = ""
+    var productImg:[String] = []
 }
 
 enum ProductTypeHome: String,CaseIterable{

@@ -13,6 +13,8 @@ struct HomeProductDetailView: View {
     //let colors: [Color] = [.blue,.brown,.orange,.red,.black]
     @EnvironmentObject var sharedHomeData: SharedHomeDataModel
     @EnvironmentObject var homeData: HomeViewModel
+    @State var seleccionado: Int = 0
+    private let colors: [String] = ["navy","gold","verde","red","morado"]
     var animation: Namespace.ID
 //    init(){
 //        UIPageControl.appearance().currentPageIndicatorTintColor = .orange
@@ -48,27 +50,29 @@ struct HomeProductDetailView: View {
                 }
                 TabView{
                     TabView{
-                        
-                        Image(product.productImg).resizable().scaledToFit()
+                        Image(product.productImg[seleccionado]).resizable().scaledToFit()
                             .matchedGeometryEffect(id: "\(product.id)IMAGE", in: animation)
-                        Image(product.productImg).resizable().scaledToFit()
-                        Image(product.productImg).resizable().scaledToFit()
-                        Image(product.productImg).resizable().scaledToFit()
-                        Image(product.productImg).resizable().scaledToFit()
-                        Image(product.productImg).resizable().scaledToFit()
                     }.tabViewStyle(PageTabViewStyle()).background(Color("gris")).accentColor(Color("main_color"))
                 }.frame(width: UIScreen.main.bounds.width - 20, height: 250, alignment: .center)
                 ScrollView(.horizontal){
                     HStack{
-                        Image(product.productImg).resizable().frame(width: 80, height: 80).cornerRadius(8).background(Color("gris")).overlay{
-                            Rectangle()
-                                .stroke(Color("main_color"))
+                        ForEach(Array(product.productImg.enumerated()), id: \.offset) { index, element in
+                            Button{
+                                seleccionado=index
+                            }label:{
+                                if (index==seleccionado){
+                                    Image(product.productImg[index]).resizable().frame(width: 80, height: 80).cornerRadius(8).background(Color("gris")).overlay{
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke(Color("main_color"))
+                                    }
+                                }else{
+                                    Image(product.productImg[index]).resizable().frame(width: 80, height: 80).background(Color("gris")).cornerRadius(15)
+                                }
+                                
+                            }
+                                
                         }
-                        Image(product.productImg).resizable().frame(width: 80, height: 80).cornerRadius(8).background(Color("gris"))
-                        Image(product.productImg).resizable().frame(width: 80, height: 80).cornerRadius(8).background(Color("gris"))
-                        Image(product.productImg).resizable().frame(width: 80, height: 80).cornerRadius(8).background(Color("gris"))
-                        Image(product.productImg).resizable().frame(width: 80, height: 80).cornerRadius(8).background(Color("gris"))
-                        Image(product.productImg).resizable().frame(width: 80, height: 80).cornerRadius(8).background(Color("gris"))
+    
                     }
                 }.padding(.horizontal)
                 VStack (alignment: .leading){
@@ -98,7 +102,19 @@ struct HomeProductDetailView: View {
                         }
                         Text(product.price).font(.system(size: 22)).fontWeight(.bold).foregroundColor(Color("main_color")).padding(.horizontal).padding(.top,5)
                         HStack{
-                            Text("Color").padding(.horizontal).font(.system(size: 18))
+                            VStack {
+                                Text("Color").padding(.horizontal).font(.system(size: 18))
+                                HStack {
+                                    ForEach(colors, id:\.self){ color in
+                                        Circle()
+                                            .foregroundColor(Color(color))
+                                            .frame(width: 20, height: 20)
+                                            
+                                            
+                                    }
+                                }.padding(.horizontal)
+                            }
+                            
                             Spacer()
                             HStack{
                                 Spacer()

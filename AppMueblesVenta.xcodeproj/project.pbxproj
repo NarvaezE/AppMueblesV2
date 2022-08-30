@@ -39,7 +39,6 @@
 		77BF192428946770004F7398 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BF192328946770004F7398 /* SignUpView.swift */; };
 		77BF192628946789004F7398 /* ForgotPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BF192528946789004F7398 /* ForgotPassView.swift */; };
 		77CB383A289AD96C004519C7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB3839289AD96C004519C7 /* SplashView.swift */; };
-		77CB383C289AF199004519C7 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB383B289AF199004519C7 /* ProductsView.swift */; };
 		77CB383E289B0899004519C7 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CB383D289B0899004519C7 /* OrdersView.swift */; };
 		77D01A6E289C579000651067 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D01A6D289C579000651067 /* TransactionsView.swift */; };
 		77D55FD1289850B900E471EA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D55FD0289850B900E471EA /* HomeView.swift */; };
@@ -89,7 +88,6 @@
 		77BF192328946770004F7398 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		77BF192528946789004F7398 /* ForgotPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassView.swift; sourceTree = "<group>"; };
 		77CB3839289AD96C004519C7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		77CB383B289AF199004519C7 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		77CB383D289B0899004519C7 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
 		77D01A6D289C579000651067 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		77D55FD0289850B900E471EA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -119,8 +117,8 @@
 		775BDF1928B0202200D41A48 /* TabView */ = {
 			isa = PBXGroup;
 			children = (
-				775BDF1A28B0203700D41A48 /* Home.swift */,
 				775BDF1C28B020A000D41A48 /* Liked.swift */,
+				775BDF1A28B0203700D41A48 /* Home.swift */,
 				775BDF1E28B020AB00D41A48 /* Explore.swift */,
 				775BDF2028B020B800D41A48 /* Cart.swift */,
 				775BDF2228B020C100D41A48 /* Profile.swift */,
@@ -217,14 +215,13 @@
 				77D55FDC2898632900E471EA /* CartView.swift */,
 				77D55FDE2898665100E471EA /* ExploreView.swift */,
 				77CB3839289AD96C004519C7 /* SplashView.swift */,
-				77CB383B289AF199004519C7 /* ProductsView.swift */,
 				77CB383D289B0899004519C7 /* OrdersView.swift */,
 				77D01A6D289C579000651067 /* TransactionsView.swift */,
 				77B8E08F28A179EA00AF5E7C /* PaymentView.swift */,
 				77B8E09128A17A5500AF5E7C /* NotificationView.swift */,
 				77B8E09328A17A6300AF5E7C /* MyAddressView.swift */,
-				77B8E09528A17A7100AF5E7C /* MyAccountView.swift */,
 				77B8E09728A17A7E00AF5E7C /* SettingsView.swift */,
+				77B8E09528A17A7100AF5E7C /* MyAccountView.swift */,
 				77DB4E8A28A2EC2900F3A1AC /* toolbar.swift */,
 				77B8E09928A17A9500AF5E7C /* LiveShowroomView.swift */,
 				77DB4E8C28A30A2D00F3A1AC /* CheckoutView.swift */,
@@ -319,7 +316,6 @@
 				77BF19222894675E004F7398 /* SignInView.swift in Sources */,
 				77D55FDF2898665100E471EA /* ExploreView.swift in Sources */,
 				77B8E09428A17A6300AF5E7C /* MyAddressView.swift in Sources */,
-				77CB383C289AF199004519C7 /* ProductsView.swift in Sources */,
 				77D55FD1289850B900E471EA /* HomeView.swift in Sources */,
 				77D55FDB2898631900E471EA /* ProfileView.swift in Sources */,
 				77A7505D289D9147001523EC /* CardView.swift in Sources */,

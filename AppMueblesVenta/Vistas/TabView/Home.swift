@@ -78,11 +78,11 @@ struct Home: View {
         VStack(spacing: 10){
             ZStack {
                 if sharedData.showDetailHomeProducts{
-                    Image(product.productImg)
+                    Image(product.productImg[0])
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }else{
-                    Image(product.productImg)
+                    Image(product.productImg[0])
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .matchedGeometryEffect(id:

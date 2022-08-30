@@ -59,7 +59,7 @@ struct Cart: View {
                                         }
                                         HStack{
                                             
-                                            Image(product.productImg).resizable().aspectRatio(contentMode: .fit)
+                                            Image(product.productImg[0]).resizable().aspectRatio(contentMode: .fit)
                                             VStack(alignment: .leading, spacing: 8){
                                                 Text(product.title)
                                                 Text(product.price)

@@ -24,12 +24,12 @@ struct ExploreView: View {
                     LazyVGrid(columns: [GridItem(.fixed(200)),GridItem(.fixed(200))],content: {
                         VStack(alignment: .leading){
                             ZStack {
-                                NavigationLink(destination: ProductsView())
-                                {
+//                                NavigationLink(destination: ProductsView())
+//                                {
                                 Image("sillon")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                }
+//                                }
                             }
                             VStack(alignment: .leading){
                                 Text("New").font(.subheadline).foregroundColor(Color("main_color")) 
@@ -40,9 +40,9 @@ struct ExploreView: View {
                             .background(Color("gris"))
                             .cornerRadius(20.0)
                             .shadow(color: Color.black.opacity(0.02), radius: 16, x: 16, y: 16)
-                        NavigationLink(destination:ProductsView()){
-                            HomeProductsView(name: "Arm Chair", img: "arm_chair", price: 140)
-                        }
+//                        NavigationLink(destination:ProductsView()){
+//                            HomeProductsView(name: "Arm Chair", img: "arm_chair", price: 140)
+//                        }
                         HomeProductsView(name: "Garden Chair", img: "gard_chair", price: 80)
                         HomeProductsView(name: "Garden Chair", img: "gard_chair", price: 80)
                         HomeProductsView(name: "Garden Chair", img: "gard_chair", price: 80)
