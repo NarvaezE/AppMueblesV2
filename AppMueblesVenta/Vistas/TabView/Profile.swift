@@ -32,7 +32,19 @@ struct Profile: View {
                         CardViewOpciones(opciones: opciones)
                     }
                 }.listStyle(.plain)
-                
+                Button(action:{
+                    apiCall().logout(e: email)
+                }, label: {
+                    HStack{
+                        Image(systemName: "chevron.backward").font(.system(size: 20))
+                            
+                        Text("Log out").font(.system(size: 20))
+                            .fontWeight(.regular)
+                    }.foregroundColor(Color("main_color"))
+                        .padding(8)
+                        .background(Color("color_button")
+                            .cornerRadius(40))
+                })
                 NavigationLink(
                     destination: SignInView(),
                     label: {

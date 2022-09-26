@@ -14,8 +14,38 @@ struct Home: View {
     @StateObject var homeData: HomeViewModel = HomeViewModel()
     var body: some View {
         NavigationView {
+            
             ScrollView(.vertical) {
                 VStack{
+                    HStack{
+                        Button{
+//                            withAnimation(.easeInOut){
+//                                sharedData.showDetailHomeProducts = false
+//                            }
+                        } label: {
+                            Image(systemName: "line.2.horizontal.decrease.circle")
+                                .font(.title2)
+                                .foregroundColor(Color.black.opacity(0.7))
+                        }
+                        
+                        Spacer()
+                        Text("Home")
+                        Spacer()
+                        Button{
+                            
+                        } label: {
+                            Image(systemName: "viewfinder")
+                                .font(.title2)
+                                .foregroundColor(Color.black.opacity(0.7))
+                        }
+                        Button{
+                            
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                                .font(.title2)
+                                .foregroundColor(Color.black.opacity(0.7))
+                        }
+                    }.padding(.horizontal)
                     Image("banner_home").resizable().aspectRatio(contentMode: .fit).padding(.horizontal,30)
 
                     ScrollView(.horizontal,showsIndicators: false) {
@@ -42,35 +72,37 @@ struct Home: View {
                         })
                     
                     
-                }.navigationBarTitle("Home").navigationBarTitleDisplayMode(.inline).toolbar(content: {
-                    ToolbarItem(placement: .navigationBarLeading){
-                        Button {
-                            
-                        }label:{
-                            Label("salir",systemImage: "line.2.horizontal.decrease.circle")
-                                .labelStyle(.iconOnly)
-                        }
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing){
-                        Button {
-                            
-                        }label:{
-                            Label("salir",systemImage: "viewfinder")
-                                .labelStyle(.iconOnly)
-                        }
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing){
-                        Button {
-                            
-                        }label:{
-                            Label("salir",systemImage: "magnifyingglass")
-                                .labelStyle(.iconOnly)
-                        }
-                    }
-                }).onChange(of: homeData.productType){ newValue in
+                }
+//                .navigationBarTitle("Home").navigationBarTitleDisplayMode(.inline).toolbar(content: {
+//                    ToolbarItem(placement: .navigationBarLeading){
+//                        Button {
+//
+//                        }label:{
+//                            Label("salir",systemImage: "line.2.horizontal.decrease.circle")
+//                                .labelStyle(.iconOnly)
+//                        }
+//                    }
+//                    ToolbarItem(placement: .navigationBarTrailing){
+//                        Button {
+//
+//                        }label:{
+//                            Label("salir",systemImage: "viewfinder")
+//                                .labelStyle(.iconOnly)
+//                        }
+//                    }
+//                    ToolbarItem(placement: .navigationBarTrailing){
+//                        Button {
+//
+//                        }label:{
+//                            Label("salir",systemImage: "magnifyingglass")
+//                                .labelStyle(.iconOnly)
+//                        }
+//                    }
+//                })
+                .onChange(of: homeData.productType){ newValue in
                     homeData.filterProductsHome()
             }
-            }
+            }.navigationBarHidden(true)
         }
     }
     @ViewBuilder
