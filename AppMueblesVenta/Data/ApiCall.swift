@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-
-struct Users: Decodable {
+struct Users: Decodable,Identifiable {
     let message:String
     let created_at: String
     let created_by: String
@@ -22,6 +22,7 @@ struct Users: Decodable {
     let updated_at: String
 
 }
+
 struct Root: Decodable {
    let users : [Users]
 
@@ -40,7 +41,7 @@ class apiCall: ObservableObject {
           ],
           [
             "key": "password",
-            "value": p,//14a@u8EQk#!dtU
+            "value": p,//c
             "type": "text"
           ]] as [[String : Any]]
 
@@ -77,38 +78,40 @@ class apiCall: ObservableObject {
         request.httpMethod = "POST"
         request.httpBody = postData
 
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                print(String(describing: error))
-                
-                semaphore.signal()
-                return
-          }
-            do{
-                let json = try JSONSerialization.jsonObject(with: data)
-                print(String(data: data, encoding: .utf8)!)
-                print("//////////////////////////")
-                print( json)
-            }catch let error {
-                print(error.localizedDescription)
-            }
-            
-            do{
-                let user = try JSONDecoder().decode(Root.self, from: data)
-                
-                
-                print(user)
-            }catch let error {
-                print(error.localizedDescription)
-            }
-            
-            
-            
-          semaphore.signal()
-            return
-        }
-        task.resume()
-        semaphore.wait()
+//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+//            guard let data = data else {
+//                print(String(describing: error))
+//
+//                semaphore.signal()
+//                return
+//          }
+//            do{
+//                let json = try JSONSerialization.jsonObject(with: data)
+//                print(String(data: data, encoding: .utf8)!)
+//                print("//////////////////////////")
+//                print( json)
+//            }catch let error {
+//                print(error.localizedDescription)
+//            }
+//
+//            do{
+//                let user = try JSONDecoder().decode(Root.self, from: data)
+//
+//
+//                print(user)
+//            }catch let error {
+//                print(error.localizedDescription)
+//                return
+//            }
+//
+//
+//
+//          semaphore.signal()
+//            return
+//        }
+//        task.resume()
+//        semaphore.wait()
+        
     }
     
     func getUserComments(completion: @escaping ([Users]) -> ()) {

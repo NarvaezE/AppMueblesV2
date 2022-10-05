@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct SignInView: View {
-    init(){
-        UITabBar.appearance().isHidden=true
-        
-    }
+    
     @State var email: String = ""
     @State var password: String = ""
     @EnvironmentObject var settings: UserSettings
+    @State var user = UserViewModel()
     
     var body: some View {
 //        if settings.isLoggedIn{
@@ -43,22 +41,11 @@ struct SignInView: View {
                         }
                     ).navigationBarHidden(true)
                     
-//                    NavigationLink(
-//                        destination: MainView().navigationBarHidden(true),
-//                        label: {
-//                            Text("Sign In").font(.system(size: 20))
-//                                .fontWeight(.semibold)
-//                                .foregroundColor(Color.white)
-//                                .padding(22)
-//                                .padding(.horizontal,122)
-//                                .background(Color("main_color")
-//                                    .cornerRadius(40))
-//                        }
-//                    ).navigationBarHidden(true)
-//                        .navigationBarBackButtonHidden(true)
+                    .navigationBarBackButtonHidden(true)
                     
                     Button(action:{
-                        apiCall().loginTest(e:email,p:password)
+                        
+                        user.loginTest(e:email,p:password)
                     }, label: {
                         Text("Sign In").font(.system(size: 20))
                             .fontWeight(.semibold)
@@ -101,7 +88,25 @@ struct SignInView: View {
             }
         }
     
+    
+//    func updateValidation(success:Bool){
+//        var isValidated = false
+//        withAnimation{
+//            isValidated = success
+//        }
+//    }
 }
+
+class Authenticate: ObservableObject{
+    @Published var isValidated = false
+    
+    func updateValidation(success:Bool){
+        withAnimation{
+            isValidated = success
+        }
+    }
+}
+
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {

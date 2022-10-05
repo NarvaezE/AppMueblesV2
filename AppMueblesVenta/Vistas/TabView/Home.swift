@@ -55,15 +55,7 @@ struct Home: View {
                             }
                         }.padding(.horizontal)
                     }
-                    //Productos
-//                    ScrollView(.horizontal,showsIndicators: false)
-//                    {
-//                        HStack(spacing:15){
-//                            ForEach(homeData.filteredProductsHome){ product in
-//                                ProductHomeCardView(product:product)
-//                            }
-//                        }
-//                    }
+
                     LazyVGrid(columns: [GridItem(.fixed(200)),GridItem(.fixed(200))],content: {
                         
                           ForEach(homeData.filteredProductsHome){ product in
@@ -73,32 +65,6 @@ struct Home: View {
                     
                     
                 }
-//                .navigationBarTitle("Home").navigationBarTitleDisplayMode(.inline).toolbar(content: {
-//                    ToolbarItem(placement: .navigationBarLeading){
-//                        Button {
-//
-//                        }label:{
-//                            Label("salir",systemImage: "line.2.horizontal.decrease.circle")
-//                                .labelStyle(.iconOnly)
-//                        }
-//                    }
-//                    ToolbarItem(placement: .navigationBarTrailing){
-//                        Button {
-//
-//                        }label:{
-//                            Label("salir",systemImage: "viewfinder")
-//                                .labelStyle(.iconOnly)
-//                        }
-//                    }
-//                    ToolbarItem(placement: .navigationBarTrailing){
-//                        Button {
-//
-//                        }label:{
-//                            Label("salir",systemImage: "magnifyingglass")
-//                                .labelStyle(.iconOnly)
-//                        }
-//                    }
-//                })
                 .onChange(of: homeData.productType){ newValue in
                     homeData.filterProductsHome()
             }

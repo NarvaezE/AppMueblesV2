@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Profile: View {
-    
+    @State var email = "enarvaez_19@alu.uabcs.mx"
     @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationView {

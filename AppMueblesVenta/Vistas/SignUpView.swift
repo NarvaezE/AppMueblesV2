@@ -53,19 +53,6 @@ struct SignUpView: View {
                         .background(Color("main_color")
                             .cornerRadius(40))
                 })
-                NavigationLink(
-                    destination: MainView().navigationBarHidden(true),
-                    label: {
-                        Text("Sign Up").font(.system(size: 20))
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.white)
-                            .padding(22)
-                            .padding(.horizontal,110)
-                            .background(Color("main_color")
-                                .cornerRadius(40))
-                    }
-                ).navigationBarHidden(true)
-                    .navigationBarBackButtonHidden(true)
                 
                 Button(action: {
                     
