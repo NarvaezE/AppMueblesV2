@@ -187,19 +187,19 @@ struct CategoryBtn2: View {
          }
     }
 }
-
-struct CategoriesView2: View {
-    @State var selected_tab = tabs[0]
-    var body: some View {
-        ScrollView(.horizontal,showsIndicators: false) {
-            HStack {
-                ForEach(tabs, id:\.self) { tab in
-                    CategoryBtn(text: tab,selected:$selected_tab)
-                }
-            }.padding(.vertical)
-        }
-    }
-}
+//
+//struct CategoriesView2: View {
+//    @State var selected_tab = tabs[0]
+//    var body: some View {
+//        ScrollView(.horizontal,showsIndicators: false) {
+//            HStack {
+//                ForEach(tabs, id:\.self) { tab in
+//                    CategoryBtn(text: tab,selected:$selected_tab)
+//                }
+//            }.padding(.vertical)
+//        }
+//    }
+//}
 
 struct HomeProductsView2: View {
     var name: String

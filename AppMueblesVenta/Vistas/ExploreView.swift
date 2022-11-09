@@ -43,9 +43,9 @@ struct ExploreView: View {
 //                        NavigationLink(destination:ProductsView()){
 //                            HomeProductsView(name: "Arm Chair", img: "arm_chair", price: 140)
 //                        }
-                        HomeProductsView(name: "Garden Chair", img: "gard_chair", price: 80)
-                        HomeProductsView(name: "Garden Chair", img: "gard_chair", price: 80)
-                        HomeProductsView(name: "Garden Chair", img: "gard_chair", price: 80)
+//                        HomeProductsView(name: "Garden Chair", img: "gard_chair", price: 80)
+//                        HomeProductsView(name: "Garden Chair", img: "gard_chair", price: 80)
+//                        HomeProductsView(name: "Garden Chair", img: "gard_chair", price: 80)
                         
                     })
                 }

@@ -18,7 +18,7 @@ struct AppMueblesVentaApp: App {
                 MainView()
                     .environmentObject(authentication)
             }else{
-                SignInView()
+                MainView()
                     .environmentObject(authentication)
             }
         }
